@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-Social.NET.Web-4cc92d63-2252-4717-a8f4-3361edeef556",
 
   "dependencies": {
@@ -41,10 +41,11 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc":  {
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "Social.NET.Auth": "1.0.0-*"
   },
 
   "tools": {
