@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Social.NET.CMS
 {
@@ -18,7 +19,7 @@ namespace Social.NET.CMS
 		/// <summary>
 		/// Роли которым разрешен доступ.
 		/// </summary>
-		public string[] Roles { get; set; }
+		//public List<Roles> Roles { get; set; }
 
 		/// <summary>
 		/// Дата создания.
@@ -34,5 +35,10 @@ namespace Social.NET.CMS
 		/// Собственник.
 		/// </summary>
 		public string UserId { get; set; }
+
+		//public Content()
+		//{
+		//	Roles = new List<string>();
+		//}
 	}
 }

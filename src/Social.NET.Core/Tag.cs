@@ -1,4 +1,4 @@
-﻿namespace Social.NET.CMS
+﻿namespace Social.NET.Core
 {
 	/// <summary>
 	/// Ключевые слова.

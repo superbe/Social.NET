@@ -45,7 +45,9 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Social.NET.Auth": "1.0.0-*"
+			"Social.NET.Auth": "1.0.0-*",
+			"Social.NET.CMS": "1.0.0-*",
+			"Social.NET.Core": "1.0.0-*"
   },
 
   "tools": {
