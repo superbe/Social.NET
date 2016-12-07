@@ -3,15 +3,15 @@
 	/// <summary>
 	/// Ключевые слова.
 	/// </summary>
-	public class Tag
+	public class Tag : EntityInfo
 	{
-		/// <summary>
-		/// Идентификатор.
-		/// </summary>
-		//[Key]
-		//[HiddenInput]
-		//[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int Id { get; set; }
+		///// <summary>
+		///// Идентификатор.
+		///// </summary>
+		////[Key]
+		////[HiddenInput]
+		////[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		//public int Id { get; set; }
 
 		/// <summary>
 		/// Лексическая единица.

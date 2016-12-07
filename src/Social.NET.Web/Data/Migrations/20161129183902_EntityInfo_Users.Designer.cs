@@ -8,9 +8,10 @@ using Social.NET.Web.Data;
 namespace Social.NET.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161129183902_EntityInfo_Users")]
+    partial class EntityInfo_Users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -23,8 +24,6 @@ namespace Social.NET.Web.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<int?>("MenuItemId");
-
                     b.Property<string>("Name")
                         .HasAnnotation("MaxLength", 256);
 
@@ -34,8 +33,6 @@ namespace Social.NET.Web.Data.Migrations
                     b.Property<int?>("TagId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MenuItemId");
 
                     b.HasIndex("NormalizedName")
                         .HasName("RoleNameIndex");
@@ -131,103 +128,7 @@ namespace Social.NET.Web.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Social.NET.Web.Models.ApplicationUser", b =>
-                {
-                    b.Property<string>("Id");
-
-                    b.Property<int>("AccessFailedCount");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
-
-                    b.Property<string>("Email")
-                        .HasAnnotation("MaxLength", 256);
-
-                    b.Property<bool>("EmailConfirmed");
-
-                    b.Property<bool>("LockoutEnabled");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd");
-
-                    b.Property<int?>("MenuItemId");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasAnnotation("MaxLength", 256);
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasAnnotation("MaxLength", 256);
-
-                    b.Property<string>("PasswordHash");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<bool>("PhoneNumberConfirmed");
-
-                    b.Property<string>("SecurityStamp");
-
-                    b.Property<int?>("TagId");
-
-                    b.Property<bool>("TwoFactorEnabled");
-
-                    b.Property<string>("UserName")
-                        .HasAnnotation("MaxLength", 256);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MenuItemId");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasName("UserNameIndex");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.MenuItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Access");
-
-                    b.Property<DateTime>("CreationTime");
-
-                    b.Property<bool>("IsReadOnly");
-
-                    b.Property<DateTime>("LastAccessTime");
-
-                    b.Property<string>("LastEditor");
-
-                    b.Property<DateTime>("LastWriteTime");
-
-                    b.Property<string>("Name")
-                        .IsRequired();
-
-                    b.Property<string>("Owner");
-
-                    b.Property<string>("PageId");
-
-                    b.Property<string>("PageURL");
-
-                    b.Property<int?>("ParentId");
-
-                    b.Property<string>("Title");
-
-                    b.Property<byte[]>("Version");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParentId");
-
-                    b.ToTable("Menu");
-                });
-
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.Page", b =>
+            modelBuilder.Entity("Social.NET.CMS.Page", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -262,7 +163,7 @@ namespace Social.NET.Web.Data.Migrations
                     b.ToTable("Pages");
                 });
 
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.PageItem", b =>
+            modelBuilder.Entity("Social.NET.CMS.PageItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -288,7 +189,7 @@ namespace Social.NET.Web.Data.Migrations
                     b.ToTable("PageItems");
                 });
 
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.Template", b =>
+            modelBuilder.Entity("Social.NET.CMS.Template", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -308,6 +209,59 @@ namespace Social.NET.Web.Data.Migrations
                     b.ToTable("Templates");
                 });
 
+            modelBuilder.Entity("Social.NET.Web.Models.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id");
+
+                    b.Property<int>("AccessFailedCount");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("Email")
+                        .HasAnnotation("MaxLength", 256);
+
+                    b.Property<bool>("EmailConfirmed");
+
+                    b.Property<bool>("LockoutEnabled");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasAnnotation("MaxLength", 256);
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasAnnotation("MaxLength", 256);
+
+                    b.Property<string>("PasswordHash");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<string>("SecurityStamp");
+
+                    b.Property<int?>("TagId");
+
+                    b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<string>("UserName")
+                        .HasAnnotation("MaxLength", 256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasName("UserNameIndex");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("AspNetUsers");
+                });
+
             modelBuilder.Entity("Social.NET.Web.Models.Core.Tag", b =>
                 {
                     b.Property<int>("Id")
@@ -325,8 +279,7 @@ namespace Social.NET.Web.Data.Migrations
 
                     b.Property<DateTime>("LastWriteTime");
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.Property<string>("Owner");
 
@@ -341,10 +294,6 @@ namespace Social.NET.Web.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
                 {
-                    b.HasOne("Social.NET.Web.Models.CMS.MenuItem")
-                        .WithMany("Roles")
-                        .HasForeignKey("MenuItemId");
-
                     b.HasOne("Social.NET.Web.Models.Core.Tag")
                         .WithMany("Roles")
                         .HasForeignKey("TagId");
@@ -387,36 +336,25 @@ namespace Social.NET.Web.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("Social.NET.CMS.Page", b =>
+                {
+                    b.HasOne("Social.NET.CMS.Template", "Template")
+                        .WithOne("Page")
+                        .HasForeignKey("Social.NET.CMS.Page", "TemplateId");
+                });
+
+            modelBuilder.Entity("Social.NET.CMS.PageItem", b =>
+                {
+                    b.HasOne("Social.NET.CMS.Page", "Page")
+                        .WithMany("PageItems")
+                        .HasForeignKey("PageId");
+                });
+
             modelBuilder.Entity("Social.NET.Web.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("Social.NET.Web.Models.CMS.MenuItem")
-                        .WithMany("Users")
-                        .HasForeignKey("MenuItemId");
-
                     b.HasOne("Social.NET.Web.Models.Core.Tag")
                         .WithMany("Users")
                         .HasForeignKey("TagId");
-                });
-
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.MenuItem", b =>
-                {
-                    b.HasOne("Social.NET.Web.Models.CMS.MenuItem", "Parent")
-                        .WithMany("Childs")
-                        .HasForeignKey("ParentId");
-                });
-
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.Page", b =>
-                {
-                    b.HasOne("Social.NET.Web.Models.CMS.Template", "Template")
-                        .WithOne("Page")
-                        .HasForeignKey("Social.NET.Web.Models.CMS.Page", "TemplateId");
-                });
-
-            modelBuilder.Entity("Social.NET.Web.Models.CMS.PageItem", b =>
-                {
-                    b.HasOne("Social.NET.Web.Models.CMS.Page", "Page")
-                        .WithMany("PageItems")
-                        .HasForeignKey("PageId");
                 });
         }
     }

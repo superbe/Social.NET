@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Social.NET.CMS;
+//using Social.NET.CMS;
 using Social.NET.Web.Data;
+using Social.NET.Web.Models.CMS;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

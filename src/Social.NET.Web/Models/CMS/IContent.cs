@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Social.NET.CMS
+namespace Social.NET.Web.Models.CMS
 {
 	/// <summary>
 	/// Интерфейс общего класса.
@@ -31,6 +31,11 @@ namespace Social.NET.CMS
 		/// <summary>
 		/// Собственник.
 		/// </summary>
-		string UserId { get; set; }
+		string Owner { get; set; }
+
+		/// <summary>
+		/// Версия объекта.
+		/// </summary>
+		byte[] Version { get; set; }
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Social.NET.CMS
+namespace Social.NET.Web.Models.CMS
 {
 	/// <summary>
 	/// Базовый класс большинства публикуемых объектов.
@@ -31,14 +31,19 @@ namespace Social.NET.CMS
 		/// </summary>
 		public DateTime Changed { get; set; }
 
-		/// <summary>
-		/// Собственник.
-		/// </summary>
-		public string UserId { get; set; }
-
 		//public Content()
 		//{
 		//	Roles = new List<string>();
 		//}
+
+		/// <summary>
+		/// Собственник.
+		/// </summary>
+		public string Owner { get; set; }
+
+		/// <summary>
+		/// Версия объекта.
+		/// </summary>
+		public byte[] Version { get; set; }
 	}
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Social.NET.CMS;
-using Social.NET.Core;
+//using Social.NET.CMS;
+//using Social.NET.Core;
 using Social.NET.Web.Models;
+using Social.NET.Web.Models.CMS;
+using Social.NET.Web.Models.Core;
 
 namespace Social.NET.Web.Data
 {
@@ -24,5 +26,6 @@ namespace Social.NET.Web.Data
 		public DbSet<Page> Pages { get; set; }
 		public DbSet<PageItem> PageItems { get; set; }
 		public DbSet<Template> Templates { get; set; }
+		public DbSet<MenuItem> Menu { get; set; }
 	}
 }
